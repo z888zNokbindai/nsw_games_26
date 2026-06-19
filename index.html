@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>รายชื่อเกมและวันวางจำหน่าย</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
@@ -260,11 +261,13 @@
 </head>
 <body>
     <div class="max-w-6xl">
+        <!-- Header -->
         <div class="text-center">
             <h1>ตารางรายชื่อเกม</h1>
             <p class="text-slate-600">รวมข้อมูลวันวางจำหน่ายและแพลตฟอร์ม</p>
         </div>
 
+        <!-- Search Bar & Stats -->
         <div class="search-container">
             <div class="relative">
                 <span class="absolute">
@@ -279,6 +282,7 @@
             </div>
         </div>
 
+        <!-- Table Container -->
         <div class="table-wrapper">
             <div class="overflow-x-auto">
                 <table>
@@ -293,6 +297,7 @@
                     </tbody>
                 </table>
             </div>
+            <!-- Empty State -->
             <div id="emptyState" class="hidden">
                 <p>ไม่พบข้อมูลที่ค้นหา</p>
             </div>
@@ -769,7 +774,7 @@
     {
         "วันวางจำหน่าย": "4 มิถุนายน 2026",
         "รายชื่อเกม": "Retrowave Velocity Master",
-        "หมายเหตุ / แพลตฟอร์ม": "เกมแบบดาวน์โหลด"
+        "หมายเหตุ / แพลtฟอร์ม": "เกมแบบดาวน์โหลด"
     },
     {
         "วันวางจำหน่าย": "4 มิถุนายน 2026",
@@ -2069,7 +2074,7 @@
     {
         "วันวางจำหน่าย": "4 มิถุนายน 2026",
         "รายชื่อเกม": "Grid Runner Outrun Express X1",
-        "หมายเหตุ / แพลตฟorg": "เกมแบบดาวน์โหลด"
+        "หมายเหตุ / แพลตฟอร์ม": "เกมแบบดาวน์โหลด"
     },
     {
         "วันวางจำหน่าย": "4 มิถุนายน 2026",
@@ -2549,6 +2554,7 @@
             renderTable(filtered);
         }
 
+        // เริ่มเรนเดอร์ตารางทันทีที่โหลดหน้าเว็บเสร็จ
         renderTable(gamesData);
     </script>
 </body>
