@@ -5,300 +5,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>รายชื่อเกมและวันวางจำหน่าย</title>
     <script src="https://cdn.tailwindcss.com"></script>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
-    
-    :root {
-        --bg-main: #0b0f19;
-        --bg-card: #151d30;
-        --bg-th: #1e2942;
-        --border-color: #263554;
-        --text-main: #f1f5f9;
-        --text-muted: #94a3b8;
-        --accent-glow: rgba(56, 189, 248, 0.15);
-        --accent-color: #38bdf8;
-    }
-
-    body {
-        font-family: 'Sarabun', sans-serif;
-        background-color: var(--bg-main);
-        color: var(--text-main);
-        min-height: 100vh;
-        padding: 2.5rem 1rem;
-        margin: 0;
-        -webkit-font-smoothing: antialiased;
-    }
-
-    .max-w-6xl {
-        max-w: 72rem;
-        margin: 0 auto;
-    }
-
-    /* Header */
-    .text-center {
-        text-align: center;
-        margin-bottom: 2.5rem;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: #fff;
-        margin: 0 0 0.5rem 0;
-        letter-spacing: -0.025em;
-        background: linear-gradient(to right, #fff, #94a3b8);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .text-slate-600 {
-        color: var(--text-muted);
-        font-size: 0.95rem;
-        margin: 0;
-    }
-
-    /* Search Bar Box */
-    .bg-white.rounded-xl.shadow-sm {
-        background-color: var(--bg-card);
-        border: 1px solid var(--border-color);
-        border-radius: 1rem;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    @media (min-width: 640px) {
-        .bg-white.rounded-xl.shadow-sm {
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --bg-main: #0b0f19;
+            --bg-card: #151d30;
+            --bg-th: #1e2942;
+            --border-color: #263554;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --accent-color: #38bdf8;
         }
-    }
 
-    .relative {
-        position: relative;
-        flex-content: 1;
-        width: 100%;
-    }
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    @media (min-width: 640px) {
+        .max-w-6xl {
+            max-w: 72rem;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .text-center {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.025em;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-slate-600 {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Search Bar Box */
+        .search-container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (min-width: 640px) {
+            .search-container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
         .relative {
-            max-width: 28rem;
+            position: relative;
+            flex: 1;
+            width: 100%;
         }
-    }
 
-    /* Search Input */
-    input[type="text"] {
-        width: 100%;
-        background-color: var(--bg-main);
-        color: #fff;
-        border: 1px solid var(--border-color);
-        border-radius: 0.75rem;
-        padding: 0.75rem 1rem 0.75rem 2.75rem;
-        font-size: 0.925rem;
-        box-sizing: border-box;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
+        @media (min-width: 640px) {
+            .relative {
+                max-width: 28rem;
+            }
+        }
 
-    input[type="text"]:focus {
-        outline: none;
-        border-color: var(--accent-color);
-        box-shadow: 0 0 0 4px var(--accent-glow);
-    }
+        /* Search Input */
+        input[type="text"] {
+            width: 100%;
+            background-color: var(--bg-main);
+            color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem 0.75rem 2.75rem;
+            font-size: 0.925rem;
+            box-sizing: border-box;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-    input[type="text"]::placeholder {
-        color: #4b5563;
-    }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 4px var(--accent-glow);
+        }
 
-    .absolute {
-        position: absolute;
-        top: 50%;
-        left: 1rem;
-        transform: translateY(-50%);
-        color: #4b5563;
-        display: flex;
-        align-items: center;
-        pointer-events: none;
-    }
+        input[type="text"]::placeholder {
+            color: #4b5563;
+        }
 
-    /* Stats Counter */
-    .text-sm.text-slate-500 {
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        white-space: nowrap;
-    }
+        .absolute {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            color: #4b5563;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+        }
 
-    #matchCount {
-        color: var(--accent-color);
-        font-weight: 700;
-        font-size: 1.1rem;
-    }
+        /* Stats Counter */
+        .text-sm.text-slate-500 {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
 
-    #totalCount {
-        color: #fff;
-        font-weight: 600;
-    }
+        #matchCount {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
 
-    /* Table Wrapper */
-    .overflow-hidden {
-        border-radius: 1rem;
-        border: 1px solid var(--border-color);
-        background-color: var(--bg-card);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-        overflow: hidden;
-    }
+        #totalCount {
+            color: #fff;
+            font-weight: 600;
+        }
 
-    .overflow-x-auto {
-        overflow-x: auto;
-    }
+        /* Table Wrapper */
+        .table-wrapper {
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
 
-    /* Table */
-    table {
-        width: 100%;
-        border-collapse: separate;
-        border-spacing: 0;
-        text-align: left;
-    }
+        .overflow-x-auto {
+            overflow-x: auto;
+        }
 
-    th {
-        background-color: var(--bg-th);
-        color: var(--text-muted);
-        font-size: 0.75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid var(--border-color);
-    }
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            text-align: left;
+        }
 
-    td {
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid var(--border-color);
-        vertical-align: middle;
-        font-size: 0.9rem;
-    }
+        th {
+            background-color: var(--bg-th);
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-    tr:last-child td {
-        border-bottom: none;
-    }
+        td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+            font-size: 0.9rem;
+        }
 
-    tr.hover\:bg-slate-50\/70:hover {
-        background-color: rgba(30, 41, 66, 0.4) !important;
-    }
+        tr:last-child td {
+            border-bottom: none;
+        }
 
-    td.font-medium.text-slate-900 {
-        color: #e2e8f0;
-        font-weight: 500;
-    }
+        tr:hover td {
+            background-color: rgba(30, 41, 66, 0.4);
+        }
 
-    td.font-medium.text-slate-800 {
-        color: #fff;
-        font-weight: 400;
-    }
+        .td-date {
+            color: #e2e8f0;
+            font-weight: 500;
+            white-space: nowrap;
+        }
 
-    /* Custom Platform Badges */
-    .inline-flex {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 0.025em;
-    }
+        .td-title {
+            color: #fff;
+            font-weight: 400;
+        }
 
-    /* เกมแบบดาวน์โหลด */
-    .bg-blue-50.text-blue-700.border-blue-100 {
-        background-color: rgba(14, 165, 233, 0.1) !important;
-        color: #38bdf8 !important;
-        border: 1px solid rgba(14, 165, 233, 0.2) !important;
-    }
+        /* Custom Platform Badges */
+        .inline-flex {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+        }
 
-    /* แบบตลับ */
-    .bg-emerald-50.text-emerald-700.border-emerald-100 {
-        background-color: rgba(16, 185, 129, 0.1) !important;
-        color: #34d399 !important;
-        border: 1px solid rgba(16, 185, 129, 0.2) !important;
-    }
+        .badge-download {
+            background-color: rgba(14, 165, 233, 0.1) !important;
+            color: #38bdf8 !important;
+            border: 1px solid rgba(14, 165, 233, 0.2) !important;
+        }
 
-    /* อื่นๆ */
-    .bg-slate-100.text-slate-700 {
-        background-color: rgba(148, 163, 184, 0.1) !important;
-        color: #cbd5e1 !important;
-        border: 1px solid rgba(148, 163, 184, 0.2) !important;
-    }
+        .badge-cartridge {
+            background-color: rgba(16, 185, 129, 0.1) !important;
+            color: #34d399 !important;
+            border: 1px solid rgba(16, 185, 129, 0.2) !important;
+        }
 
-    /* Empty State */
-    #emptyState {
-        padding: 4rem 2rem;
-        text-align: center;
-        color: #4b5563;
-    }
+        .badge-other {
+            background-color: rgba(148, 163, 184, 0.1) !important;
+            color: #cbd5e1 !important;
+            border: 1px solid rgba(148, 163, 184, 0.2) !important;
+        }
 
-    #emptyState p {
-        margin: 0;
-        font-size: 1rem;
-    }
+        /* Empty State */
+        #emptyState {
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #4b5563;
+        }
 
-    /* Scrollbar Styling */
-    ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-    }
-    ::-webkit-scrollbar-track {
-        background: var(--bg-main);
-    }
-    ::-webkit-scrollbar-thumb {
-        background: #263554;
-        border-radius: 4px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: #334771;
-    }
-</style>
+        #emptyState p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-main);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #263554;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334771;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-slate-900 sm:text-4xl">ตารางรายชื่อเกม</h1>
-            <p class="mt-2 text-sm text-slate-600">รวมข้อมูลวันวางจำหน่ายและแพลตฟอร์ม</p>
+<body>
+    <div class="max-w-6xl">
+        <div class="text-center">
+            <h1>ตารางรายชื่อเกม</h1>
+            <p class="text-slate-600">รวมข้อมูลวันวางจำหน่ายและแพลตฟอร์ม</p>
         </div>
 
-        <div class="bg-white rounded-xl shadow-sm p-6 mb-6 border border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div class="relative flex-1 max-w-md">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-slate-400">
+        <div class="search-container">
+            <div class="relative">
+                <span class="absolute">
                     <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
                 </span>
-                <input type="text" id="searchInput" placeholder="ค้นหาชื่อเกม วันวางจำหน่าย หรือแพลตฟอร์ม..." 
-                    class="block w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-colors"
-                    oninput="filterData()">
+                <input type="text" id="searchInput" placeholder="ค้นหาชื่อเกม วันวางจำหน่าย หรือแพลตฟอร์ม..." oninput="filterData()">
             </div>
-            <div class="text-sm text-slate-500 font-medium">
-                พบทั้งหมด <span id="matchCount" class="text-blue-600 font-bold">0</span> / <span id="totalCount" class="font-bold">0</span> รายการ
+            <div class="text-sm text-slate-500">
+                พบทั้งหมด <span id="matchCount">0</span> / <span id="totalCount">0</span> รายการ
             </div>
         </div>
 
-        <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+        <div class="table-wrapper">
             <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
+                <table>
                     <thead>
-                        <tr class="bg-slate-50 border-b border-slate-100 text-slate-600 text-xs uppercase font-semibold tracking-wider">
-                            <th class="px-6 py-4 w-1/4">วันวางจำหน่าย</th>
-                            <th class="px-6 py-4 w-1/2">รายชื่อเกม</th>
-                            <th class="px-6 py-4 w-1/4">หมายเหตุ / แพลตฟอร์ม</th>
+                        <tr>
+                            <th style="width: 25%;">วันวางจำหน่าย</th>
+                            <th style="width: 50%;">รายชื่อเกม</th>
+                            <th style="width: 25%;">หมายเหตุ / แพลตฟอร์ม</th>
                         </tr>
                     </thead>
-                    <tbody id="tableBody" class="divide-y divide-slate-100 text-sm text-slate-700">
+                    <tbody id="tableBody">
                     </tbody>
                 </table>
             </div>
-            <div id="emptyState" class="hidden text-center py-12 text-slate-400">
-                <p class="text-base font-medium">ไม่พบข้อมูลที่ค้นหา</p>
+            <div id="emptyState" class="hidden">
+                <p>ไม่พบข้อมูลที่ค้นหา</p>
             </div>
         </div>
     </div>
@@ -747,7 +743,7 @@
     },
     {
         "วันวางจำหน่าย": "4 มิถุนายน 2026",
-        "ราย现实": "Laser Highway Drift",
+        "รายชื่อเกม": "Laser Highway Drift",
         "หมายเหตุ / แพลตฟอร์ม": "เกมแบบดาวน์โหลด"
     },
     {
@@ -2073,7 +2069,7 @@
     {
         "วันวางจำหน่าย": "4 มิถุนายน 2026",
         "รายชื่อเกม": "Grid Runner Outrun Express X1",
-        "หมายเหตุ / แพลตฟอร์ม": "เกมแบบดาวน์โหลด"
+        "หมายเหตุ / แพลตฟorg": "เกมแบบดาวน์โหลด"
     },
     {
         "วันวางจำหน่าย": "4 มิถุนายน 2026",
@@ -2516,21 +2512,20 @@
             const fragment = document.createDocumentFragment();
             data.forEach(item => {
                 const tr = document.createElement('tr');
-                tr.className = "hover:bg-slate-50/70 transition-colors";
                 
-                let platformBadge = '';
+                let badgeClass = 'badge-other';
                 if (item['หมายเหตุ / แพลตฟอร์ม'].includes('ดาวน์โหลด')) {
-                    platformBadge = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-100">${item['หมายเหตุ / แพลตฟอร์ม']}</span>`;
+                    badgeClass = 'badge-download';
                 } else if (item['หมายเหตุ / แพลตฟอร์ม'].includes('ตลับ')) {
-                    platformBadge = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-100">${item['หมายเหตุ / แพลตฟอร์ม']}</span>`;
-                } else {
-                    platformBadge = `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">${item['หมายเหตุ / แพลตฟอร์ม']}</span>`;
+                    badgeClass = 'badge-cartridge';
                 }
 
+                const platformBadge = `<span class="inline-flex ${badgeClass}">${item['หมายเหตุ / แพลตฟอร์ม']}</span>`;
+
                 tr.innerHTML = `
-                    <td class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">${item['วันวางจำหน่าย'] || ''}</td>
-                    <td class="px-6 py-4 font-medium text-slate-800">${item['รายชื่อเกม'] || ''}</td>
-                    <td class="px-6 py-4">${platformBadge}</td>
+                    <td class="td-date">${item['วันวางจำหน่าย'] || ''}</td>
+                    <td class="td-title">${item['รายชื่อเกม'] || ''}</td>
+                    <td>${platformBadge}</td>
                 `;
                 fragment.appendChild(tr);
             });
